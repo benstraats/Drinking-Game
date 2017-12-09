@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -13,18 +14,15 @@ public class MainActivity extends AppCompatActivity {
 
     private Button startGameButton;
     private Button addPlayerButton;
-    private ArrayList<EditText> players = new ArrayList<>();
+    private EditText playerText;
+    private ArrayList<String> players = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText player1Text = findViewById(R.id.player1);
-        EditText player2Text = findViewById(R.id.player2);
-
-        players.add(player1Text);
-        players.add(player2Text);
+        playerText = findViewById(R.id.playerBox);
 
         startGameButton = findViewById(R.id.startGameButton);
         addPlayerButton = findViewById(R.id.addPlayerButton);
@@ -45,17 +43,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startGame(View v) {
-        String[] playerNames = new String[players.size()];
+        addPlayer(v);
 
-        for (int i=0; i<players.size(); i++) {
-            playerNames[i] = players.get(i).getText().toString();
+        if (players.size() < 2) {
+            Toast.makeText(getApplicationContext(), "You must have atleast 2 players to play", Toast.LENGTH_LONG).show();
+        } else {
+            String[] playerNames = players.toArray(new String[players.size()]);
+
+            Intent startGameIntent = new Intent(this, GameActivity.class);
+            startGameIntent.putExtra(Utils.PLAYERS, playerNames);
+            startActivity(startGameIntent);
         }
-
-        Intent startGameIntent = new Intent(this, GameActivity.class);
-        startGameIntent.putExtra(Utils.PLAYERS, playerNames);
-        startActivity(startGameIntent);
     }
 
     private void addPlayer(View v) {
+        String parsedPerson = playerText.getText().toString();
+
+        if (!parsedPerson.equals("")) {
+            players.add(parsedPerson);
+            playerText.setText("");
+        }
+
     }
 }

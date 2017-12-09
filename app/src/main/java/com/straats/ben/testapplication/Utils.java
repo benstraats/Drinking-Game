@@ -16,9 +16,15 @@ class Utils {
     static String PLAYER_SEPERATOR = "SsSs";
 
     static String[] tasks = {
-            PLAYER_SEPERATOR + " drink 3 times. Testing name: " + PLAYER_SEPERATOR + " ",
+            PLAYER_SEPERATOR + " drink 3 times.",
             PLAYER_SEPERATOR + " hand out 2 drinks.",
             PLAYER_SEPERATOR + " and " + PLAYER_SEPERATOR + " have to high five within 3 seconds or drink.",
             "Categories of cars. " + PLAYER_SEPERATOR + " starts.",
-            "Last one to put their finger on their nose drinks 2 times"};
+            "Last one to put their finger on their nose drinks 2 times",
+            PLAYER_SEPERATOR + " do a shot.",
+            PLAYER_SEPERATOR + " must put someone elses toe in their mouth or finish their drink",
+            "Everyone drink until " + PLAYER_SEPERATOR + " says \"Moo\"",
+            PLAYER_SEPERATOR + " now drinks whenever " + PLAYER_SEPERATOR + " has to drink.",
+            PLAYER_SEPERATOR + " take two drinks of " + PLAYER_SEPERATOR + "'s drink."
+    };
 }

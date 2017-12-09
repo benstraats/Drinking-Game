@@ -17,14 +17,14 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/player1"
+        android:id="@+id/playerBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Player 1"
+        android:hint="Player Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -43,25 +43,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/player2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Player 2"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/player1"
-        app:layout_constraintStart_toStartOf="@+id/player1"
-        app:layout_constraintTop_toBottomOf="@+id/player1" />
-
     <Button
         android:id="@+id/addPlayerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Add Player"
-        app:layout_constraintStart_toStartOf="@+id/player2"
-        app:layout_constraintTop_toBottomOf="@+id/player2" />
+        app:layout_constraintStart_toStartOf="@+id/playerBox"
+        app:layout_constraintTop_toBottomOf="@+id/playerBox" />
 
 </android.support.constraint.ConstraintLayout>
