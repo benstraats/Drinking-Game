@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button startGameButton;
     private Button addPlayerButton;
     private EditText playerText;
+    private TextView textView;
     private ArrayList<String> players = new ArrayList<>();
 
     @Override
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         startGameButton = findViewById(R.id.startGameButton);
         addPlayerButton = findViewById(R.id.addPlayerButton);
+
+        textView = findViewById(R.id.textView);
 
         startGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,12 +61,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addPlayer(View v) {
-        String parsedPerson = playerText.getText().toString();
+        String parsedPerson = playerText.getText().toString().trim();
 
         if (!parsedPerson.equals("")) {
             players.add(parsedPerson);
             playerText.setText("");
-        }
 
+            String newTextViewString = textView.getText().toString() + "\n";
+
+            if (players.size() == 1) {
+                newTextViewString += "Players:\n";
+            }
+
+            newTextViewString += parsedPerson;
+
+            textView.setText(newTextViewString);
+        }
     }
 }
