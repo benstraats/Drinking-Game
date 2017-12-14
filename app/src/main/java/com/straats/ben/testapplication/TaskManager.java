@@ -9,7 +9,6 @@ import java.util.HashMap;
 
 class TaskManager {
 
-    private ArrayList<String> categories;
     private ArrayList<Task> tasks = new ArrayList<>();
     private String[] players;
 
@@ -18,7 +17,6 @@ class TaskManager {
 
     TaskManager(ArrayList<String> categories, String[] players) {
 
-        this.categories = categories;
         this.players = players;
         this.taskCounter = 0;
         this.taskEnding = new HashMap<Integer, String>();
