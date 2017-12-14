@@ -12,7 +12,10 @@ class Utils {
     //Want a static seed
     static Random rand = new Random();
 
-    static String PLAYERS = "come.straats.ben.testapplication.PLAYERS";
+    static String PLAYERS_KEY = "come.straats.ben.testapplication.PLAYERS";
+    static String CATEGORIES_KEY = "come.straats.ben.testapplication.CATEGORIES";
+
+    static int CHECKLIST_ID = 2398;
 
     static String[] PLAYER_SEPERATORS = {"SsSs",
             "TtTt",

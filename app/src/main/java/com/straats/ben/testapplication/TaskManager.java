@@ -1,6 +1,7 @@
 package com.straats.ben.testapplication;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -15,7 +16,7 @@ class TaskManager {
     private int taskCounter;
     private HashMap<Integer, String> taskEnding;
 
-    TaskManager(ArrayList<String> categories, String[] players) {
+    TaskManager(String[] categories, String[] players) {
 
         this.players = players;
         this.taskCounter = 0;
@@ -24,7 +25,7 @@ class TaskManager {
         ArrayList<Task> allTasks = Utils.getAllTasks();
 
         for (Task task : allTasks) {
-            if (task.getNumPlayers() <= players.length && categories.contains(task.getCategory())) {
+            if (task.getNumPlayers() <= players.length && Arrays.asList(categories).contains(task.getCategory())) {
                 for (int i=0; i<task.getPopularity(); i++) {
                     tasks.add(task);
                 }

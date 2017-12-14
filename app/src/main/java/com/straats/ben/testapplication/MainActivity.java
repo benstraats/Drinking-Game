@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 addPlayer(v);
             }
         });
+
+        LinearLayout ll = findViewById(R.id.linearLayout);
+        for (int i=0; i<Utils.CATEGORIES.length; i++) {
+            CheckBox cb = new CheckBox(getApplicationContext());
+            cb.setText(Utils.CATEGORIES[i]);
+            cb.setId(Utils.CHECKLIST_ID + i);
+            ll.addView(cb);
+        }
     }
 
     private void startGame(View v) {
@@ -52,10 +62,25 @@ public class MainActivity extends AppCompatActivity {
         if (players.size() < 2) {
             Toast.makeText(getApplicationContext(), "You must have atleast 2 players to play", Toast.LENGTH_LONG).show();
         } else {
+            ArrayList<String> categories = new ArrayList<>();
+            for (int i=0; i<Utils.CATEGORIES.length; i++) {
+                CheckBox cb = findViewById(Utils.CHECKLIST_ID + i);
+                if (cb.isChecked()) {
+                    categories.add(Utils.CATEGORIES[i]);
+                }
+            }
+
+            if (categories.size() < 1) {
+                Toast.makeText(getApplicationContext(), "You must choose atleast 1 category", Toast.LENGTH_LONG).show();
+                return;
+            }
+
             String[] playerNames = players.toArray(new String[players.size()]);
+            String[] categoryNames = categories.toArray(new String[categories.size()]);
 
             Intent startGameIntent = new Intent(this, GameActivity.class);
-            startGameIntent.putExtra(Utils.PLAYERS, playerNames);
+            startGameIntent.putExtra(Utils.PLAYERS_KEY, playerNames);
+            startGameIntent.putExtra(Utils.CATEGORIES_KEY, categoryNames);
             startActivity(startGameIntent);
         }
     }
@@ -67,10 +92,12 @@ public class MainActivity extends AppCompatActivity {
             players.add(parsedPerson);
             playerText.setText("");
 
-            String newTextViewString = textView.getText().toString() + "\n";
+            String newTextViewString = textView.getText().toString();
 
             if (players.size() == 1) {
-                newTextViewString += "Players:\n";
+                newTextViewString = "Players: ";
+            } else {
+                newTextViewString += ", ";
             }
 
             newTextViewString += parsedPerson;

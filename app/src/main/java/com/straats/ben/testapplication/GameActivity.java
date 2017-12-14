@@ -15,6 +15,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView stepText;
     private Button nextButton;
     private String[] players;
+    private String[] categories;
     private TaskManager taskManager;
 
     @Override
@@ -23,18 +24,12 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         Intent intent = getIntent();
-        players = intent.getStringArrayExtra(Utils.PLAYERS);
+        players = intent.getStringArrayExtra(Utils.PLAYERS_KEY);
+        categories = intent.getStringArrayExtra(Utils.CATEGORIES_KEY);
 
         stepText = findViewById(R.id.stepText);
         nextButton = findViewById(R.id.nextButton);
 
-        ArrayList<String> categories = new ArrayList<>();
-        categories.add("General");
-        categories.add("Sexual");
-        categories.add("Categories");
-        categories.add("Voting");
-        categories.add("Rules");
-        //categories.add("debug");
         taskManager = new TaskManager(categories, players);
 
         nextButton.setOnClickListener(new View.OnClickListener() {
