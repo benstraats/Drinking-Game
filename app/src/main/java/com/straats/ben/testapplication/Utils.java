@@ -58,7 +58,7 @@ class Utils {
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " choose a person and you both have to chug for as long as you choose.", 1, 1, "General", -1));
         allTasks.add(new Task("2 drinks for the boys.", 0, 1, "General", -1));
         allTasks.add(new Task("2 drinks for the girls.", 0, 1, "General", -1));
-        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " pour one out for the boys into "  + Utils.PLAYER_SEPERATORS[0] + "'s mouth. Pour for as long as you feel necessary.", 2, 1, "General", -1));
+        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " pour one out for the boys into "  + Utils.PLAYER_SEPERATORS[1] + "'s mouth. Pour for as long as you feel necessary.", 2, 1, "General", -1));
         allTasks.add(new Task("Drink 2 times if you support feminism.", 0, 1, "General", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " name someones birthday that\'s playing the game or drink 4 times.", 1, 1, "General", -1));
         allTasks.add(new Task("Everyone can give away 1 drink.", 0, 1, "General", -1));
