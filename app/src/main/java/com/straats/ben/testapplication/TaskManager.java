@@ -35,7 +35,6 @@ class TaskManager {
 
     String getNextTaskText() {
         int taskIndex = Utils.rand.nextInt(tasks.size());
-        taskCounter++;
 
         if (taskEnding.get(taskCounter) != null) {
             String taskEndingString = taskEnding.get(taskCounter);
@@ -43,11 +42,18 @@ class TaskManager {
             return taskEndingString;
         }
 
+        taskCounter++;
         Task task = tasks.get(taskIndex);
         String taskText = task.getFormattedTask(players);
 
         if (task.getDuration() != -1) {
-            taskEnding.put(taskCounter + task.getDuration(), "The following rule no longer applies: " + taskText);
+            int taskEndTurn = taskCounter + task.getDuration();
+            if (taskEnding.get(taskEndTurn) != null) {
+                taskEnding.put(taskEndTurn, taskEnding.get(taskEndTurn) + " and " + taskText);
+            }
+            else {
+                taskEnding.put(taskCounter + task.getDuration(), "The following rules no longer apply: " + taskText);
+            }
         }
 
         return taskText;

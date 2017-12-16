@@ -112,10 +112,6 @@ class Utils {
         allTasks.add(new Task("Everyone vote at the same time. Money of fame. Winning group hands out 5 drinks as a team.", 0, 1, "Voting", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " and " + Utils.PLAYER_SEPERATORS[1] + " have to swap seats or drink 5 times each.", 2, 1, "General", -1));
 
-
-
-        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " and " + Utils.PLAYER_SEPERATORS[1] + " test", 2, 1, "debug", -1));
-
         return allTasks;
     }
 }
