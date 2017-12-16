@@ -50,7 +50,7 @@ class Utils {
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " must put someone else\'s finger in their mouth or finish their drink", 1, 1, "Sexual", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " must suck someone else\'s finger or finish their drink", 1, 1, "Sexual", -1));
         allTasks.add(new Task("Everyone drink until " + Utils.PLAYER_SEPERATORS[0] + " says stop.", 1, 1, "General", -1));
-        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " now drinks whenever " + Utils.PLAYER_SEPERATORS[1] + " has to drink.", 2, 1, "Rules", 5));
+        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " now drinks whenever " + Utils.PLAYER_SEPERATORS[1] + " has to drink.", 2, 1, "Rules", 10));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " take 1 drink of " + Utils.PLAYER_SEPERATORS[1] + "'s drink.", 2, 1, "General", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " take 2 drinks of " + Utils.PLAYER_SEPERATORS[1] + "'s drink.", 2, 1, "General", -1));
         allTasks.add(new Task("Songs by the Beatles. " + Utils.PLAYER_SEPERATORS[0] + " starts. Loser drinks 5 times", 1, 1, "Categories", -1));
@@ -59,7 +59,7 @@ class Utils {
         allTasks.add(new Task("Types of cereal, loser drinks 4 times. " + Utils.PLAYER_SEPERATORS[0] + " starts.", 1, 1, "Categories", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " must clap between each word or drink for each missed clap.", 1, 1, "Rules", 5));
         allTasks.add(new Task("Everyone has raise their glass to " + Utils.PLAYER_SEPERATORS[0] + " before they drink or they have do double their drinking task.", 1, 1, "Rules", 5));
-        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " can ask any question to anyone. If they get it wrong they have to drink twice.", 1, 1, "Rules", 5));
+        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " can ask any question to anyone. If they get it wrong they have to drink twice.", 1, 1, "Rules", 15));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " drink 1 time and hand out 1 drink.", 1, 3, "General", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " drink 2 times and hand out 2 drinks.", 1, 2, "General", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " drink 3 times and hand out 3 drinks.", 1, 1, "General", -1));
@@ -81,7 +81,7 @@ class Utils {
         allTasks.add(new Task("Drink if you think " + Utils.PLAYER_SEPERATORS[0] + " is a good person.", 1, 1, "General", -1));
         allTasks.add(new Task("Drink if you think " + Utils.PLAYER_SEPERATORS[0] + " is a bad person.", 1, 1, "General", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " try everyones drink.", 1, 1, "General", -1));
-        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " is immune to drinking.", 1, 1, "Rules", 5));
+        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " is immune to drinking.", 1, 1, "Rules", 3));
         allTasks.add(new Task("Name the persons middle name thats sitting to the right of you or drink 3 times.", 0, 1, "General", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " and " + Utils.PLAYER_SEPERATORS[1] + " have to rock, paper, scissors. Loser drink 3 times.", 2, 1, "General", -1));
         allTasks.add(new Task("Types of flowers, loser drinks 2 times. " + Utils.PLAYER_SEPERATORS[0] + " starts.", 1, 1, "Categories", -1));
@@ -111,10 +111,6 @@ class Utils {
         allTasks.add(new Task("Everyone vote at the same time. Summer or winter. Winning group hands out 5 drinks as a team.", 0, 1, "Voting", -1));
         allTasks.add(new Task("Everyone vote at the same time. Money of fame. Winning group hands out 5 drinks as a team.", 0, 1, "Voting", -1));
         allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " and " + Utils.PLAYER_SEPERATORS[1] + " have to swap seats or drink 5 times each.", 2, 1, "General", -1));
-
-
-
-        allTasks.add(new Task(Utils.PLAYER_SEPERATORS[0] + " and " + Utils.PLAYER_SEPERATORS[1] + " test", 2, 1, "debug", -1));
 
         return allTasks;
     }
