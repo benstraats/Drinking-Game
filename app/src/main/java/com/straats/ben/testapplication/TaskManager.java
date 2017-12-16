@@ -52,7 +52,7 @@ class TaskManager {
                 taskEnding.put(taskEndTurn, taskEnding.get(taskEndTurn) + " and " + taskText);
             }
             else {
-                taskEnding.put(taskCounter + task.getDuration(), "The following rules no longer apply: " + taskText);
+                taskEnding.put(taskEndTurn, "The following rules no longer apply: " + taskText);
             }
         }
 
